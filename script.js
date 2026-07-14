@@ -341,4 +341,53 @@ color:#60A5FA;
 
 font-weight:700;
 
+}/* ===============================
+   Đọc dữ liệu học sinh từ JSON
+=============================== */
+
+async function loadStudents() {
+
+    const response = await fetch("data/students.json");
+
+    const students = await response.json();
+
+    const searchBtn = document.getElementById("searchBtn");
+
+    const searchInput = document.getElementById("searchInput");
+
+    const resultBox = document.getElementById("resultBox");
+
+    searchBtn.onclick = () => {
+
+        const keyword = searchInput.value.trim().toLowerCase();
+
+        const student = students.find(s =>
+            s.name.toLowerCase() === keyword ||
+            s.id.toLowerCase() === keyword
+        );
+
+        if (!student) {
+
+            resultBox.innerHTML = `
+                <h3>❌ Không tìm thấy học sinh.</h3>
+            `;
+
+            return;
+        }
+
+        resultBox.innerHTML = `
+            <h2>${student.name}</h2>
+            <p><b>Mã:</b> ${student.id}</p>
+            <p><b>Lớp:</b> ${student.class}</p>
+            <hr>
+            <p>📘 Toán: ${student.math}</p>
+            <p>📕 Văn: ${student.literature}</p>
+            <p>📗 Anh: ${student.english}</p>
+            <hr>
+            <h3>⭐ ${student.rank}</h3>
+        `;
+    };
+
 }
+
+loadStudents();
