@@ -1,10 +1,427 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>2KC Connect</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/6b0d3c8f31.js" crossorigin="anonymous"></script>
+
 </head>
+
 <body>
 
+    <!-- Loading -->
+
+    <div id="loader">
+
+        <div class="loader-circle"></div>
+
+        <h2>2KC CONNECT</h2>
+
+        <p>Đang tải website...</p>
+
+    </div>
+
+    <!-- Background -->
+
+    <div class="bg-blur bg1"></div>
+
+    <div class="bg-blur bg2"></div>
+
+    <div class="bg-blur bg3"></div>
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="logo">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            <span>2KC</span>
+
+        </div>
+
+        <nav>
+
+            <a href="#home">Trang chủ</a>
+
+            <a href="#score">Điểm số</a>
+
+            <a href="#schedule">Lịch học</a>
+
+            <a href="#notice">Thông báo</a>
+
+            <a href="#discord">Discord</a>
+
+        </nav>
+
+        <button id="themeBtn">
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+    </header>
+
+    <!-- Hero -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-left">
+
+            <span class="badge">
+
+                ✨ Chào mừng đến với cộng đồng 2KC
+
+            </span>
+
+            <h1>
+
+                2KC Connect
+
+            </h1>
+
+            <p>
+
+                Website chính thức dành cho các thành viên 2KC.
+
+                Học tập • Kết nối • Chia sẻ • Phát triển.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#discord" class="btn">
+
+                    Tham gia Discord
+
+                </a>
+
+                <a href="#score" class="btn2">
+
+                    Xem điểm
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="hero-right">
+
+            <img src="assets/images/banner.png" alt="Banner">
+
+        </div>
+
+    </section>
+
+    <!-- Statistics -->
+
+    <section class="stats">
+
+        <div class="card">
+
+            <h2 id="members">
+
+                0
+
+            </h2>
+
+            <p>Thành viên</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="classes">
+
+                0
+
+            </h2>
+
+            <p>Lớp học</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="events">
+
+                0
+
+            </h2>
+
+            <p>Sự kiện</p>
+
+        </div>
+
+        <div class="card">
+
+            <h2 id="documents">
+
+                0
+
+            </h2>
+
+            <p>Tài liệu</p>
+
+        </div>
+
+    </section>
+
+    <!-- Điểm số -->
+
+    <section id="score" class="section">
+
+        <h2>
+
+            📊 Tra cứu điểm
+
+        </h2>
+
+        <p>
+
+            Nhập tên hoặc mã học sinh để xem kết quả.
+
+        </p>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                placeholder="Nhập tên..."
+                id="searchInput">
+
+            <button id="searchBtn">
+
+                Tìm kiếm
+
+            </button>
+
+        </div>
+
+        <div id="resultBox">
+
+        </div>
+
+    </section>    <!-- Bảng xếp hạng -->
+
+    <section id="ranking" class="section">
+
+        <h2>🏆 Bảng xếp hạng</h2>
+
+        <div class="ranking-container">
+
+            <div class="rank-card first">
+                <span>🥇</span>
+                <h3>LOL</h3>
+                <p>980 XP</p>
+            </div>
+
+            <div class="rank-card second">
+                <span>🥈</span>
+                <h3>Đang cập nhật</h3>
+                <p>---</p>
+            </div>
+
+            <div class="rank-card third">
+                <span>🥉</span>
+                <h3>Đang cập nhật</h3>
+                <p>---</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Lịch học -->
+
+    <section id="schedule" class="section">
+
+        <h2>📅 Lịch học</h2>
+
+        <div class="schedule-grid">
+
+            <div class="day-card">
+                <h3>Thứ 2</h3>
+                <p>20:00 - 21:00</p>
+                <span>📖 Học trên Discord</span>
+            </div>
+
+            <div class="day-card">
+                <h3>Thứ 3</h3>
+                <p>20:00 - 21:00</p>
+                <span>📖 Học trên Discord</span>
+            </div>
+
+            <div class="day-card">
+                <h3>Thứ 4</h3>
+                <p>20:00 - 21:00</p>
+                <span>📖 Học trên Discord</span>
+            </div>
+
+            <div class="day-card">
+                <h3>Thứ 5</h3>
+                <p>20:00 - 21:00</p>
+                <span>📖 Học trên Discord</span>
+            </div>
+
+            <div class="day-card">
+                <h3>Thứ 6</h3>
+                <p>20:00 - 21:00</p>
+                <span>📖 Học trên Discord</span>
+            </div>
+
+            <div class="day-card">
+                <h3>Thứ 7</h3>
+                <p>20:00 - 21:00</p>
+                <span>📖 Học trên Discord</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Thông báo -->
+
+    <section id="notice" class="section">
+
+        <h2>📢 Thông báo</h2>
+
+        <div class="notice-box">
+
+            <div class="notice-item">
+                <h3>📌 Lịch học mới</h3>
+                <p>Học vào mỗi tối từ 20:00 đến 21:00.</p>
+            </div>
+
+            <div class="notice-item">
+                <h3>📌 Tuyển thành viên</h3>
+                <p>2KC đang tuyển thêm quản lý và trợ giảng.</p>
+            </div>
+
+            <div class="notice-item">
+                <h3>📌 Cập nhật website</h3>
+                <p>Website V3 đang được phát triển.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Discord -->
+
+    <section id="discord" class="section">
+
+        <h2>💬 Tham gia Discord</h2>
+
+        <p>Cùng học tập và giao lưu với cộng đồng 2KC.</p>
+
+        <a href="#" class="discord-btn">
+
+            Tham gia ngay
+
+        </a>
+
+    </section>    <!-- CTA -->
+
+    <section class="cta">
+
+        <div class="cta-content">
+
+            <h2>Sẵn sàng học tập cùng 2KC?</h2>
+
+            <p>
+                Tham gia cộng đồng để nhận tài liệu, trao đổi bài tập,
+                tham gia các buổi học và theo dõi điểm số.
+            </p>
+
+            <a href="#discord" class="btn">
+                Bắt đầu ngay
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div class="footer-box">
+
+                <h3>2KC Connect</h3>
+
+                <p>
+                    Website học tập dành cho cộng đồng 2KC.
+                </p>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h3>Liên kết</h3>
+
+                <ul>
+
+                    <li><a href="#home">Trang chủ</a></li>
+
+                    <li><a href="#score">Điểm số</a></li>
+
+                    <li><a href="#schedule">Lịch học</a></li>
+
+                    <li><a href="#discord">Discord</a></li>
+
+                </ul>
+
+            </div>
+
+            <div class="footer-box">
+
+                <h3>Liên hệ</h3>
+
+                <p>Email:</p>
+
+                <p>maigiabaopianis@gmail.com</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            © 2026 2KC Connect | Made with ❤️
+
+        </div>
+
+    </footer>
+
+    <!-- Back To Top -->
+
+    <button id="backTop">
+
+        ↑
+
+    </button>
+
+    <!-- Script -->
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
