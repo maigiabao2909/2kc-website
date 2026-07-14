@@ -392,3 +392,31 @@ async function loadRanking(){
 }
 
 loadRanking();
+/* ===============================
+   Load Notices
+=============================== */
+
+async function loadNotices(){
+
+    const response = await fetch("data/notices.json");
+
+    const notices = await response.json();
+
+    const noticeBox = document.querySelector(".notice-box");
+
+    noticeBox.innerHTML = "";
+
+    notices.forEach(item=>{
+
+        noticeBox.innerHTML += `
+            <div class="notice-item">
+                <h3>${item.title}</h3>
+                <p>${item.content}</p>
+            </div>
+        `;
+
+    });
+
+}
+
+loadNotices();
