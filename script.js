@@ -120,33 +120,7 @@ themeBtn.addEventListener("click",()=>{
 // Search Demo
 // =====================
 
-const searchBtn=document.getElementById("searchBtn");
-
-searchBtn.addEventListener("click",()=>{
-
-    const input=document.getElementById("searchInput").value;
-
-    const result=document.getElementById("resultBox");
-
-    if(input===""){
-
-        result.innerHTML="<h3>⚠ Vui lòng nhập tên.</h3>";
-
-        return;
-
-    }
-
-    result.innerHTML=`
-        <h3>${input}</h3>
-        <br>
-        <p>Toán: 9.5</p>
-        <p>Văn: 8.8</p>
-        <p>Anh: 9.7</p>
-        <br>
-        <strong>Xếp loại: Giỏi ⭐</strong>
-    `;
-
-});/* ===========================================
+ ===========================================
    SCROLL REVEAL
 =========================================== */
 
