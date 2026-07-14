@@ -1,0 +1,22 @@
+[
+  {
+    "id": "HS001",
+    "name": "LOL",
+    "class": "7A1",
+    "math": 9.5,
+    "literature": 8.8,
+    "english": 9.7,
+    "average": 9.33,
+    "rank": "Giỏi"
+  },
+  {
+    "id": "HS002",
+    "name": "Nguyễn Văn A",
+    "class": "7A2",
+    "math": 8.2,
+    "literature": 8.5,
+    "english": 9.0,
+    "average": 8.57,
+    "rank": "Giỏi"
+  }
+]
