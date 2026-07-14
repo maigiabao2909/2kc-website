@@ -1,1 +1,344 @@
-// 2KC Connect JavaScript
+/* ===========================================
+   2KC CONNECT V3
+   script.js
+=========================================== */
+
+// =====================
+// Loading Screen
+// =====================
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("loader");
+
+    setTimeout(() => {
+
+        loader.style.opacity = "0";
+        loader.style.visibility = "hidden";
+
+    }, 1800);
+
+});
+
+// =====================
+// Counter Animation
+// =====================
+
+function counter(id, target, speed = 20){
+
+    let number = 0;
+
+    const element = document.getElementById(id);
+
+    const timer = setInterval(()=>{
+
+        number++;
+
+        element.innerText = number;
+
+        if(number >= target){
+
+            clearInterval(timer);
+
+        }
+
+    },speed);
+
+}
+
+counter("members",126);
+
+counter("classes",12);
+
+counter("events",28);
+
+counter("documents",352);
+
+// =====================
+// Back To Top
+// =====================
+
+const backTop = document.getElementById("backTop");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>500){
+
+        backTop.style.display="block";
+
+    }else{
+
+        backTop.style.display="none";
+
+    }
+
+});
+
+backTop.onclick=()=>{
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+};
+
+// =====================
+// Dark Mode
+// =====================
+
+const themeBtn=document.getElementById("themeBtn");
+
+let dark=true;
+
+themeBtn.addEventListener("click",()=>{
+
+    if(dark){
+
+        document.body.style.background="#F8FAFC";
+
+        document.body.style.color="#111827";
+
+        dark=false;
+
+    }else{
+
+        document.body.style.background="#020617";
+
+        document.body.style.color="#F8FAFC";
+
+        dark=true;
+
+    }
+
+});
+
+// =====================
+// Search Demo
+// =====================
+
+const searchBtn=document.getElementById("searchBtn");
+
+searchBtn.addEventListener("click",()=>{
+
+    const input=document.getElementById("searchInput").value;
+
+    const result=document.getElementById("resultBox");
+
+    if(input===""){
+
+        result.innerHTML="<h3>⚠ Vui lòng nhập tên.</h3>";
+
+        return;
+
+    }
+
+    result.innerHTML=`
+        <h3>${input}</h3>
+        <br>
+        <p>Toán: 9.5</p>
+        <p>Văn: 8.8</p>
+        <p>Anh: 9.7</p>
+        <br>
+        <strong>Xếp loại: Giỏi ⭐</strong>
+    `;
+
+});/* ===========================================
+   SCROLL REVEAL
+=========================================== */
+
+const sections = document.querySelectorAll(".section");
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity="1";
+            entry.target.style.transform="translateY(0)";
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+sections.forEach(section=>{
+
+    section.style.opacity="0";
+
+    section.style.transform="translateY(60px)";
+
+    section.style.transition="0.8s";
+
+    observer.observe(section);
+
+});
+
+/* ===========================================
+   BUTTON RIPPLE EFFECT
+=========================================== */
+
+const buttons=document.querySelectorAll(".btn,.btn2,.discord-btn");
+
+buttons.forEach(button=>{
+
+button.addEventListener("click",(e)=>{
+
+const circle=document.createElement("span");
+
+const size=Math.max(button.clientWidth,button.clientHeight);
+
+circle.style.width=size+"px";
+
+circle.style.height=size+"px";
+
+circle.style.left=e.offsetX-size/2+"px";
+
+circle.style.top=e.offsetY-size/2+"px";
+
+circle.style.position="absolute";
+
+circle.style.borderRadius="50%";
+
+circle.style.background="rgba(255,255,255,.45)";
+
+circle.style.transform="scale(0)";
+
+circle.style.animation="ripple .6s linear";
+
+button.appendChild(circle);
+
+setTimeout(()=>{
+
+circle.remove();
+
+},600);
+
+});
+
+});
+
+/* ===========================================
+   PARALLAX HERO
+=========================================== */
+
+window.addEventListener("mousemove",(e)=>{
+
+const hero=document.querySelector(".hero-right img");
+
+if(!hero)return;
+
+const x=(window.innerWidth/2-e.pageX)/35;
+
+const y=(window.innerHeight/2-e.pageY)/35;
+
+hero.style.transform=`translate(${x}px,${y}px)`;
+
+});
+
+/* ===========================================
+   ACTIVE NAVIGATION
+=========================================== */
+
+const navLinks=document.querySelectorAll("nav a");
+
+window.addEventListener("scroll",()=>{
+
+let current="";
+
+document.querySelectorAll("section").forEach(section=>{
+
+const top=section.offsetTop-120;
+
+if(scrollY>=top){
+
+current=section.getAttribute("id");
+
+}
+
+});
+
+navLinks.forEach(link=>{
+
+link.classList.remove("active");
+
+if(link.getAttribute("href")=="#"+current){
+
+link.classList.add("active");
+
+}
+
+});
+
+});
+
+/* ===========================================
+   RANDOM GREETING
+=========================================== */
+
+const greetings=[
+
+"👋 Chào mừng đến với 2KC!",
+
+"📚 Chúc bạn học thật tốt!",
+
+"🚀 Hôm nay bạn sẽ chinh phục mục tiêu nào?",
+
+"⭐ Cùng nhau cố gắng nhé!",
+
+"🎉 Chúc bạn một ngày học tập hiệu quả!"
+
+];
+
+console.log(
+
+greetings[Math.floor(Math.random()*greetings.length)]
+
+);
+
+/* ===========================================
+   CURRENT YEAR
+=========================================== */
+
+const footer=document.querySelector(".footer-bottom");
+
+if(footer){
+
+footer.innerHTML=`© ${new Date().getFullYear()} 2KC Connect | Made with ❤️`;
+
+}.btn,
+.btn2,
+.discord-btn{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(4);
+
+opacity:0;
+
+}
+
+}
+
+nav a.active{
+
+color:#60A5FA;
+
+font-weight:700;
+
+}
