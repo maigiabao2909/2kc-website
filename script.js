@@ -364,4 +364,31 @@ async function loadStudents() {
 
 }
 
-loadStudents();
+loadStudents();/* ===============================
+   Load Ranking
+=============================== */
+
+async function loadRanking(){
+
+    const response = await fetch("data/ranking.json");
+
+    const ranking = await response.json();
+
+    const cards = document.querySelectorAll(".rank-card");
+
+    ranking.forEach((player,index)=>{
+
+        if(cards[index]){
+
+            cards[index].querySelector("h3").textContent = player.name;
+
+            cards[index].querySelector("p").textContent =
+                player.xp + " XP";
+
+        }
+
+    });
+
+}
+
+loadRanking();
