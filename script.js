@@ -281,7 +281,7 @@ const footer=document.querySelector(".footer-bottom");
 if(footer){
 
 footer.innerHTML=`© ${new Date().getFullYear()} 2KC Connect | Made with ❤️`;
-
+}
 /* ===============================
    Đọc dữ liệu học sinh từ JSON
 =============================== */
