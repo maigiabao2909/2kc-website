@@ -4,10 +4,9 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>2KC Admin</title>
+<title>2KC Admin Dashboard</title>
 
 <link rel="stylesheet" href="../style.css">
 
@@ -15,24 +14,73 @@
 
 <body>
 
-<div class="admin-container">
+<div class="dashboard">
 
-<h1>🔐 2KC ADMIN</h1>
+    <aside class="sidebar">
 
-<p>Đăng nhập để quản lý website</p>
+        <h2>🎓 2KC Admin</h2>
 
-<input
-type="password"
-id="adminPassword"
-placeholder="Nhập mật khẩu">
+        <ul>
 
-<button id="loginBtn">
+            <li class="active">📊 Dashboard</li>
 
-Đăng nhập
+            <li>👨‍🎓 Học sinh</li>
 
-</button>
+            <li>🏆 Bảng xếp hạng</li>
 
-<p id="loginStatus"></p>
+            <li>📢 Thông báo</li>
+
+            <li>📅 Lịch học</li>
+
+            <li>⚙️ Cài đặt</li>
+
+            <li>🚪 Đăng xuất</li>
+
+        </ul>
+
+    </aside>
+
+    <main class="main">
+
+        <h1>Dashboard</h1>
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <h2 id="studentCount">0</h2>
+
+                <p>Học sinh</p>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h2 id="noticeCount">0</h2>
+
+                <p>Thông báo</p>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <h2 id="rankingCount">0</h2>
+
+                <p>Xếp hạng</p>
+
+            </div>
+
+        </div>
+
+        <div class="dashboard-content">
+
+            <h2>Xin chào 👋</h2>
+
+            <p>Chào mừng bạn đến với bảng điều khiển quản trị 2KC.</p>
+
+        </div>
+
+    </main>
 
 </div>
 
