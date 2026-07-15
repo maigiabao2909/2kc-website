@@ -451,3 +451,34 @@ status.style.color="red";
 }
 
 }
+/* =====================================
+   Dashboard Statistics
+===================================== */
+
+async function loadDashboard(){
+
+    const students =
+        await (await fetch("../data/students.json")).json();
+
+    const notices =
+        await (await fetch("../data/notices.json")).json();
+
+    const ranking =
+        await (await fetch("../data/ranking.json")).json();
+
+    if(document.getElementById("studentCount")){
+
+        document.getElementById("studentCount").innerText =
+            students.length;
+
+        document.getElementById("noticeCount").innerText =
+            notices.length;
+
+        document.getElementById("rankingCount").innerText =
+            ranking.length;
+
+    }
+
+}
+
+loadDashboard();
