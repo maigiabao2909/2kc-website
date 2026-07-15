@@ -7,7 +7,7 @@
 // Loading Screen
 // =====================
 
-window.addEventListener("load", () => {
+window.addEventListener("DOMContentLoaded", () => {
 
     const loader = document.getElementById("loader");
 
@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
         loader.style.opacity = "0";
         loader.style.visibility = "hidden";
 
-    }, 1800);
+    }, 400);
 
 });
 
@@ -287,35 +287,7 @@ if(footer){
 
 footer.innerHTML=`© ${new Date().getFullYear()} 2KC Connect | Made with ❤️`;
 
-}.btn,
-.btn2,
-.discord-btn{
-
-position:relative;
-
-overflow:hidden;
-
-}
-
-@keyframes ripple{
-
-to{
-
-transform:scale(4);
-
-opacity:0;
-
-}
-
-}
-
-nav a.active{
-
-color:#60A5FA;
-
-font-weight:700;
-
-}/* ===============================
+/* ===============================
    Đọc dữ liệu học sinh từ JSON
 =============================== */
 
