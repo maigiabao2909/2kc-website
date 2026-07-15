@@ -1291,3 +1291,32 @@ grid-template-columns:1fr;
 }
 
 }
+}.btn,
+.btn2,
+.discord-btn{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+@keyframes ripple{
+
+to{
+
+transform:scale(4);
+
+opacity:0;
+
+}
+
+}
+
+nav a.active{
+
+color:#60A5FA;
+
+font-weight:700;
+
+}
