@@ -420,3 +420,34 @@ async function loadNotices(){
 }
 
 loadNotices();
+/* ===============================
+   Admin Login
+=============================== */
+
+const loginBtn=document.getElementById("loginBtn");
+
+if(loginBtn){
+
+loginBtn.onclick=()=>{
+
+const password=document.getElementById("adminPassword").value;
+
+const status=document.getElementById("loginStatus");
+
+if(password==="2KC2026"){
+
+status.innerHTML="✅ Đăng nhập thành công";
+
+status.style.color="lime";
+
+}else{
+
+status.innerHTML="❌ Sai mật khẩu";
+
+status.style.color="red";
+
+}
+
+}
+
+}
